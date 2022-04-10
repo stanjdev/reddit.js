@@ -4,12 +4,19 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --exit"
   },
   "author": "stan",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
-    "express-handlebars": "^6.0.4"
+    "express-handlebars": "^6.0.4",
+    "express-validator": "^6.14.0",
+    "mongoose": "^6.2.10"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.2.2"
   }
 }

@@ -5,14 +5,16 @@ assert = require('assert');
 const url = 'mongodb://localhost/reddit-db';
 mongoose.connect(
   url,
-  {
-    useNewUrlParser: true
-  },
-  function(err, db) {
+  // {
+  //   useNewUrlParser: true, useUnifiedTopology: true, 
+  //   // useCreateIndex: true, useFindAndModify: false,
+  // },
+  (err) => {
     assert.equal(null, err);
-    console.log('Connected successfully to database');
+    console.log("Connected successfully to database");
 
-    // db.close(); turn on for testing
+    // turn on for testing
+    // db.close(); 
   }
 );
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection Error:'));

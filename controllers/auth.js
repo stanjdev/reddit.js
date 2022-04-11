@@ -22,5 +22,11 @@ module.exports = (app) => {
       });
   });
 
+  // LOG OUT
+  app.get('/logout', (req, res) => {
+    res.clearCookie('nToken');
+    return res.redirect('/');
+  });
+
   
 };

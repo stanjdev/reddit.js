@@ -16,6 +16,9 @@ app.set('views', './views');
 // POSTS RESOURCE
 require('./controllers/posts')(app);
 
+// COMMENTS RESOURCE
+require('./controllers/comments')(app);
+
 app.listen(3000);
 
 module.exports = app;

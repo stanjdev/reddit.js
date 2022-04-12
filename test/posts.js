@@ -1,8 +1,9 @@
 // test/posts.js
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const { describe, it, after } = require('mocha');
+const { describe, it, after, before } = require('mocha');
 
+const User = require('../models/user');
 // Import the Post model from our models folder so we
 // we can use it in our tests.
 const Post = require('../models/post');
@@ -20,6 +21,23 @@ describe('Posts', function () {
     url: 'https://www.google.com',
     summary: 'post summary'
   };
+  // User that we'll use for testing purposes
+  const user = {
+    username: 'poststest',
+    password: 'testposts',
+  };
+  before(function (done) {
+    agent
+      .post('/sign-up')
+      .set('content-type', 'application/x-www-form-urlencoded')
+      .send(user)
+      .then(function (res) {
+        done();
+      })
+      .catch(function (err) {
+        done(err);
+      });
+  });
   it('Should create with valid attributes at POST /posts/new', function(done) {
     // Checks how many posts there are now
     Post.estimatedDocumentCount()
@@ -52,8 +70,24 @@ describe('Posts', function () {
           done(err);
       });
   });
-  after(function () {
-    Post.findOneAndDelete(newPost);
-    agent.close();
-  })
+  after(function (done) {
+    Post.findOneAndDelete(newPost)
+    .then(function () {
+      agent.close();
+  
+      User
+        .findOneAndDelete({
+          username: user.username,
+        })
+        .then(function () {
+          done();
+        })
+        .catch(function (err) {
+          done(err);
+        });
+    })
+    .catch(function (err) {
+      done(err);
+    });
+  });
 });

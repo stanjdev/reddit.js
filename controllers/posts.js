@@ -48,7 +48,7 @@ module.exports = (app) => {
   app.get('/posts/:id', async (req, res) => {
     const currentUser = req.user;
     try {
-      const post = await Post.findById(req.params.id).lean().populate({ path: 'comments', populate: { path: 'author' } }).populate('author');
+      const post = await Post.findById(req.params.id).populate('comments').lean()
       return res.render('posts-show', { post, currentUser });
     } catch (err) {
       console.log(err.message);
@@ -60,7 +60,7 @@ module.exports = (app) => {
     const currentUser = req.user;
     const { subreddit } = req.params;
     try {
-      const posts = await Post.find({ subreddit }).lean().populate('author');
+      const posts = await Post.find({ subreddit }).lean();
       return res.render('posts-index', { posts, currentUser });
     } catch(err) {
       console.log(err);

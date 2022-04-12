@@ -11,6 +11,8 @@
     </form>
     {{#each post.comments}}
       <p>{{this.content}}</p>
+      <p class="text-right">Commented by: {{this.author.username}}</p>
     {{/each}}
+
   </div>
 </div>

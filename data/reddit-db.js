@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 assert = require('assert');
 
-const url = 'mongodb://localhost/reddit-db';
+const url = process.env.MONGODB_URI || 'mongodb://localhost/reddit-db';
 mongoose.connect(
   url,
   // {
@@ -12,9 +12,6 @@ mongoose.connect(
   (err) => {
     assert.equal(null, err);
     console.log("Connected successfully to database");
-
-    // turn on for testing
-    // db.close(); 
   }
 );
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection Error:'));

@@ -39,6 +39,7 @@ describe('Posts', function () {
         done(err);
       });
   });
+
   it('Should create with valid attributes at POST /posts/new', function(done) {
     // Checks how many posts there are now
     Post.estimatedDocumentCount()
@@ -71,6 +72,7 @@ describe('Posts', function () {
           done(err);
       });
   });
+
   after(function (done) {
     Post.findOneAndDelete(newPost)
     .then(function () {

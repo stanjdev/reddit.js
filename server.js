@@ -27,6 +27,9 @@ require('./controllers/comments')(app);
 // AUTH RESOURCE
 require('./controllers/auth')(app);
 
+// REPLIES RESOURCE
+require('./controllers/replies')(app);
+
 app.listen(3000);
 
 module.exports = app;

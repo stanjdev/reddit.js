@@ -10,8 +10,9 @@ mongoose.connect(
   url,
   {
     useNewUrlParser: true, 
-    // useUnifiedTopology: true, 
-    // useCreateIndex: true, useFindAndModify: false,
+    useUnifiedTopology: true, 
+    useCreateIndex: true, 
+    useFindAndModify: false,
   },
   (err) => {
     assert.equal(null, err);

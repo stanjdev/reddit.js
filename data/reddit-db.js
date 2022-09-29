@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 assert = require('assert');
 
 // const url = process.env.MONGODB_URI || 'mongodb://localhost/reddit-db';
-// const url = process.env.MONGODB_URI || 'mongodb://mongodb:27017/reddit-db';
-const url = 'mongodb://mongodb:27017/reddit-db';
+const url = process.env.MONGODB_URI || 'mongodb://mongodb:27017/reddit-db';
+// const url = 'mongodb://mongodb:27017/reddit-db';
 
 mongoose.connect(
   url,

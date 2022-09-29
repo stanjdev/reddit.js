@@ -12,13 +12,13 @@ services:
     build: .
     command: npm start
     ports:
-      - "3000:3000"
+      - "80:3000"
     links:
       - mongodb
   mongodb:
     image: mongo
     volumes: 
-      - .:/app/data/db
+      - .:/data/db
     ports: 
       - "27017:27017"
 

@@ -2,3 +2,7 @@
 
 - includes instructions on how to build and run your container
 
+docker-compose build
+docker-compose up ??????
+
+

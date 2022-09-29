@@ -2,6 +2,11 @@
 
 FROM node:latest
 ENV NODE_ENV production
+ARG MONGODB_URI=${MONGODB_URI}
+ENV SECRET=${SECRET}
+ARG MONGODB_URI=${MONGODB_URI}
+ENV SECRET=${SECRET}
+RUN echo $SECRET
 ADD . /app
 WORKDIR /app
 COPY package.json /app
@@ -9,4 +14,3 @@ RUN npm install
 COPY . /app
 EXPOSE 80 3000
 CMD [ "npm", "start", "--host=0.0.0.0" ]
-

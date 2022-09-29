@@ -16,7 +16,7 @@ services:
     links:
       - mongodb
   mongodb:
-    image: mongo
+    image: mongo:3.6.10
     volumes: 
       - .:/data/db
     ports: 

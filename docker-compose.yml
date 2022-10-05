@@ -1,10 +1,3 @@
-# To connect the db and other services? like web front end, db 
-# Compose file takes the Dockerfile in the current directory and builds the container image from it.
-
-# It specifies the build configuration for creating the container image from the source Dockerfile.
-
-# • Builds from the `Dockerfile` in the current directory.
-
 
 services:
   mongodb:

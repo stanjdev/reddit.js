@@ -7,6 +7,12 @@
 
 
 services:
+  mongodb:
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports: 
+      - "27017:27017"
   app:
     restart: always
     build: .
@@ -15,11 +21,6 @@ services:
       - "80:3000"
     links:
       - mongodb
-  mongodb:
-    image: mongo
-    volumes: 
-      - .:/data/db
-    ports: 
-      - "27017:27017"
+
 
 

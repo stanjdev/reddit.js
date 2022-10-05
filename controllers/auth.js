@@ -1,3 +1,4 @@
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
@@ -12,7 +13,7 @@ module.exports = (app) => {
     user
       .save()
       .then((user) => {
-        const token = jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: '60 days' });
+        const token = jwt.sign({ _id: user._id }, process.env.JWT_KEY, { expiresIn: '60 days' });
         res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
         return res.redirect('/');
       })
@@ -42,7 +43,7 @@ module.exports = (app) => {
             return res.status(401).send({ message: 'Wrong Username or Password' });
           }
           // Create a token
-          const token = jwt.sign({ _id: user._id, username: user.username }, process.env.SECRET, {
+          const token = jwt.sign({ _id: user._id, username: user.username }, process.env.JWT_KEY, {
             expiresIn: '60 days',
           });
           // Set a cookie and redirect to root

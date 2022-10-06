@@ -13,6 +13,8 @@
 
 - `cd` into the project directory
 
+- Run `docker-compose down`
+
 - Run `docker-compose build`
 
 - Run `docker-compose up` 

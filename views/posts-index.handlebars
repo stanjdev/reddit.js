@@ -4,14 +4,16 @@
       {{#each posts}}
         <li class="list-group-item card">
           <div class="card-body">
+            <div class="text-end">
+              <a href="/n/{{this.subreddit}}">/n/{{this.subreddit}}</a>
+              <small class="author-name">• Posted by {{ this.author.username }}</small>
+            </div>
             <div class="card-title lead">
               <a href="/posts/{{this._id}}">{{this.title}}</a>
             </div>
-            <a href="{{this.url}}" target="_blank">{{this.url}}</a>
-            <div><small>{{ this.author.username }}</small></div>
-            <div class="text-end">
-              <a href="/n/{{this.subreddit}}">/n/{{this.subreddit}}</a>
-            </div>
+            <a class="card-description" href="{{this.url}}" target="_blank">{{this.url}}</a>
+
+
             <div class="d-flex justify-content-between align-items-center" style="width: 15rem;">
               <form class="vote-up" data-id="{{this._id}}">
                 <button class="btn btn-outline-info" type="submit">Up Vote</button>

@@ -1,7 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+  --font-color: whitesmoke;
+  --color-black: rgb(4, 4, 4);
+  --color-black-card: rgb(25, 25, 25);
+  --color-grey: rgb(210, 213, 215);
+  --color-blue: rgb(29, 111, 198);
+}
+
+html {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-black);
+}
+
+.container {
+  width: 70vw;
+  margin: 0 auto;
+  border: 1px white solid;
+}
+
+
 .comment-indent {
   margin-left: 20px;
 }
 
 a {
   text-decoration: none;
+  color: var(--font-color);
+}
+
+li {
+  list-style: none;
+}
+
+.navbar, .card {
+  background-color: var(--color-black-card);
+}
+
+.navbar > .container-fluid {
+  display: flex;
+}
+
+.navbar > .container-fluid .navbar-nav {
+  display: flex;
+}
+
+.login:hover, .sign-up:hover {
+  opacity: 0.9;
+}
+
+.login, .sign-up {
+  border: 1px solid var(--color-grey);
+  padding: 0.3rem 2.4rem;
+  border-radius: 150px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0 0.6rem;
+}
+
+.sign-up {
+  color: var(--color-grey);
+  background-color: var(--font-black-card);
+}
+
+.login {
+  /* background-color: var(--color-blue); */
+  background-color: var(--color-grey);
+  color: var(--color-black-card);
+}
+
+.card {
+  width: 60%;
+  margin: 0.7rem 0;
+  padding: 1rem;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+
+.card-title {
+  margin-bottom: 0.7rem;
+}
+
+.card-title a {
+  font-size: large;
+}
+
+.text-end {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7rem;
+}
+
+.text-end a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: grey;
+}
+
+a.card-description {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+small.author-name {
+  font-weight: 300;
+  color: grey;
+  margin-left: 0.5rem;
 }

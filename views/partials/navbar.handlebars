@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             {{#if currentUser}}
-                <li class="nav-item nav-link text-light">Hello, {{currentUser.username}}</li>
+                <li class="username nav-item nav-link text-light">Hello, {{currentUser.username}}</li>
                 <li><a href="/posts/new" class="btn btn-primary navbar-btn">New Post</a></li>
                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
             {{else}}

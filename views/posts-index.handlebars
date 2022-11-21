@@ -4,24 +4,24 @@
       {{#each posts}}
         <li class="list-group-item card">
           <div class="card-body">
-            <div class="text-end">
-              <a href="/n/{{this.subreddit}}">/n/{{this.subreddit}}</a>
-              <small class="author-name">• Posted by {{ this.author.username }}</small>
-            </div>
-            <div class="card-title lead">
-              <a href="/posts/{{this._id}}">{{this.title}}</a>
-            </div>
-            <a class="card-description" href="{{this.url}}" target="_blank">{{this.url}}</a>
-
-
-            <div class="d-flex justify-content-between align-items-center" style="width: 15rem;">
+            <div class="voter d-flex justify-content-between align-items-center">
               <form class="vote-up" data-id="{{this._id}}">
-                <button class="btn btn-outline-info" type="submit">Up Vote</button>
+                <button class="arrow arrow-up btn-outline-info" type="submit"></button>
               </form>
-              <span class="vote-score">{{this.voteScore}}</span>
+              <p class="vote-score">{{this.voteScore}}</p>
               <form class="vote-down" data-id="{{this._id}}">
-                <button class="btn btn-outline-danger" type="submit">Down Vote</button>
+                <button class="arrow arrow-down btn-outline-danger" type="submit"></button>
               </form>
+            </div>
+            <div>
+              <div class="text-end">
+                <a href="/n/{{this.subreddit}}">/n/{{this.subreddit}}</a>
+                <small class="author-name">• Posted by {{ this.author.username }}</small>
+              </div>
+              <div class="card-title">
+                <a href="/posts/{{this._id}}">{{this.title}}</a>
+              </div>
+              <a class="card-description" href="{{this.url}}" target="_blank">{{this.url}}</a>
             </div>
           </div>
         </li>

@@ -6,6 +6,7 @@
   --color-black-card: rgb(25, 25, 25);
   --color-grey: rgb(210, 213, 215);
   --color-blue: rgb(29, 111, 198);
+  --color-orange: rgb(200, 63, 28);
   --font-family: 'Noto Sans', sans-serif;
 }
 
@@ -16,13 +17,18 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: var(--color-black);
+  /* background: var(--color-black); */
+  background-image:
+    url(/spartans.png),
+    linear-gradient(-90deg, var(--color-orange), var(--color-blue));
+  background-size: auto, auto;
+  background-repeat: repeat, repeat;
 }
 
 .container {
   width: 70vw;
   margin: 0 auto;
-  border: 1px white solid;
+  /* border: 1px white solid; */
 }
 
 .container-fluid {
@@ -40,7 +46,7 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -48,7 +54,7 @@ form {
   margin-left: 20px;
 }
 
-a, .text-light, label, legend, .vote-score {
+a, .text-light, label, legend, .vote-score, .summary, .card-text, .author {
   text-decoration: none;
   color: var(--font-color);
 }
@@ -85,6 +91,10 @@ li {
 	overflow: hidden;
 }
 
+.nav-item {
+  margin: 0 1rem;
+}
+
 .login:hover, .sign-up:hover {
   opacity: 0.9;
 }
@@ -95,7 +105,6 @@ li {
   border-radius: 150px;
   font-weight: 600;
   font-size: 0.9rem;
-  margin: 0 0.6rem;
 }
 
 .sign-up {
@@ -107,6 +116,10 @@ li {
   /* background-color: var(--color-blue); */
   background-color: var(--color-grey);
   color: var(--color-black-card);
+}
+
+.lead {
+  font-size: 2rem;
 }
 
 .card {
@@ -159,9 +172,83 @@ small.author-name {
 }
 
 .btn {
-  background-color: rgb(200	63	28);
+  background-color: var(--color-orange);
   color: var(--font-color);
   font-weight: 700;
   width: 17.5rem;
 }
+
+.vote-up, .vote-down {
+  width: min-content;
+}
+
+.arrow {
+  background-color: transparent;
+  padding: 0;
+  border-width: 12px;
+  border-style: solid;
+  position: initial;
+  left: 1rem;
+  transition: all ease 0.2s;
+}
+
+.arrow-up {
+  border-color: transparent transparent var(--color-grey) transparent;
+}
+
+.arrow-down {
+  border-color: var(--color-grey) transparent transparent transparent;
+}
+
+.arrow-up:hover {
+  border-color: transparent transparent var(--color-blue) transparent;
+}
+
+.arrow-down:hover {
+  border-color: var(--color-orange) transparent transparent transparent;
+}
+
+.voter {
+  width: min-content;
+  /* border: solid pink 1px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.card-body {
+  display: flex;
+}
+
+textarea {
+  line-height: 1;
+  width: 20rem;
+  padding: 3rem;
+}
+
+.new-post-input {
+  width: 25rem;
+  margin: 0 2rem;
+  border-radius: 8px;
+  border: none;
+  padding: 1.5rem;
+}
+
+.new-post-form {
+  height: 50vh;
+}
+
+.username {
+  background-size: 60px;
+  background-repeat: no-repeat;
+  background-position: center right;
+  padding-right: 3.5rem;
+}
+
+.username:nth-child(1) {
+  background-image: url(/dog-loyalty-colored.png);
+}
+
 

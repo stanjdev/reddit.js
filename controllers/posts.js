@@ -3,13 +3,13 @@ const User = require('../models/user');
 const Comment = require('../models/comment');
 
 module.exports = (app) => {
-  
-  // NEW 
+
+  // NEW
   app.get('/posts/new', (req, res) => {
     const currentUser = req.user;
     res.render('posts-new', { currentUser });
   })
-  
+
   // CREATE
   app.post('/posts/new', (req, res) => {
     if (req.user) {
@@ -34,7 +34,7 @@ module.exports = (app) => {
       return res.status(401) // UNAUTHORIZED
     }
   });
-  
+
   // INDEX
   app.get('/', async (req, res) => {
     const currentUser = req.user;
@@ -81,7 +81,7 @@ module.exports = (app) => {
       console.log(err);
     })
   });
-  
+
   // DOWNVOTE
   app.put('/posts/:id/vote-down', (req, res) => {
     Post.findById(req.params.id).then((post) => {

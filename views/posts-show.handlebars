@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
     <a href="{{post.url}}" class="lead">{{post.title}}</a>
-    <p>{{post.author.username}}</p>
-    <p>{{post.summary}}</p>
+    <p class="author">by {{post.author.username}}</p>
+    <p class="summary">{{post.summary}}</p>
     <form action="/posts/{{post._id}}/comments" method="post">
-      <textarea class='form-control' name="content" placeholder="Comment"></textarea>
+      <textarea class="" name="content" placeholder="Comment"></textarea>
       <div class="text-end">
         <button type="submit" class="btn btn-primary">Save</button>
       </div>

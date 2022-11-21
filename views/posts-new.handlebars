@@ -1,40 +1,38 @@
 <div class="row">
   <div class="col-sm-4 col-sm-offset-4">
-    <form action="/posts/new" method="post">
+    <form class="new-post-form" action="/posts/new" method="post">
       <legend>New Post</legend>
       <div class="form-group">
-        <label for="post-title">Title</label>
+        <input name="subreddit" type="text" class="new-post-input" id="post-subreddit" placeholder="Subreddit">
+      </div>
+      <div class="form-group">
         <input
           type="text"
           name="title"
-          class="form-control"
+          class="new-post-input"
           id="post-title"
           placeholder="Title"
         />
       </div>
       <div class="form-group">
-        <label for="post-url">Url</label>
+        <label for="post-url"></label>
         <input
           type="url"
           name="url"
-          class="form-control"
+          class="new-post-input"
           id="post-url"
-          placeholder="https://www.google.com"
+          placeholder="URL https://www.google.com"
         />
       </div>
       <div class="form-group">
-        <label for="post-summary">Summary</label>
         <textarea
           name="summary"
-          class="form-control"
+          class="new-post-input"
           id="post-summary"
-          placeholder="Summary"
+          placeholder="Summary Text"
         ></textarea>
       </div>
-      <div class="form-group">
-        <label for="post-subreddit">Subreddit</label>
-        <input name="subreddit" type="text" class="form-control" id="post-subreddit" placeholder="Subreddit">
-      </div>
+
       <div class="text-end">
         <button type="submit" class="btn btn-primary">Create Post</button>
       </div>

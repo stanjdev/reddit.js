@@ -17,7 +17,6 @@ html {
 body {
   margin: 0;
   padding: 0;
-  /* background: var(--color-black); */
   background-image:
     url(/spartans.png),
     linear-gradient(-90deg, var(--color-orange), var(--color-blue));
@@ -28,7 +27,6 @@ body {
 .container {
   width: 70vw;
   margin: 0 auto;
-  /* border: 1px white solid; */
 }
 
 .container-fluid {
@@ -113,7 +111,6 @@ li {
 }
 
 .login {
-  /* background-color: var(--color-blue); */
   background-color: var(--color-grey);
   color: var(--color-black-card);
 }
@@ -210,7 +207,6 @@ small.author-name {
 
 .voter {
   width: min-content;
-  /* border: solid pink 1px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
